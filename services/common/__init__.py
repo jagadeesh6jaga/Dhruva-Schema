@@ -1,3 +1,4 @@
+from .ulca_task import _ULCATask, TRANSLATION_TASK_TYPE, ASR_TASK_TYPE, TTS_TASK_TYPE, NER_TASK_TYPE
 from .ulca_language_pair import _ULCALanguagePair
 from .ulca_language import _ULCALanguage
 from .ulca_text_pair import _ULCATextPair
