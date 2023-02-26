@@ -1,9 +1,10 @@
 from pydantic import BaseModel
+from typing import Optional
 from .ulca_generic_inference_request import ULCAGenericInferenceRequestWithoutConfig
 from ..common import _ULCABaseMonolingualTaskConfig, _ULCATask
 
 class _ULCAPipelineTask(BaseModel):
-    serviceId: str
+    serviceId: Optional[str]
     task: _ULCATask
     config: dict
 
