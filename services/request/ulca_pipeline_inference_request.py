@@ -9,5 +9,5 @@ class _ULCAPipelineTask(BaseModel):
     config: dict
 
 class ULCAPipelineInferenceRequest(BaseModel):
-    taskSequence: list[_ULCAPipelineTask]
-    entryData: ULCAGenericInferenceRequestWithoutConfig
+    pipelineTasks: list[_ULCAPipelineTask]
+    inputData: ULCAGenericInferenceRequestWithoutConfig
