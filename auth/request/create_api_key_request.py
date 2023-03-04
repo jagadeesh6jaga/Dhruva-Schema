@@ -11,7 +11,7 @@ class ApiKeyType(Enum):
 
 class CreateApiKeyRequest(BaseModel):
     name: str
-    type: ApiKeyType
+    type: ApiKeyType = ApiKeyType.INFERENCE
 
     @validator("name")
     def check_api_key_name_format(cls, v):
