@@ -1,13 +1,6 @@
 import re
-from enum import Enum
-
 from pydantic import BaseModel, validator
-
-
-class ApiKeyType(Enum):
-    PLATFORM = "PLATFORM"
-    INFERENCE = "INFERENCE"
-
+from ..common.api_key_type import ApiKeyType
 
 class CreateApiKeyRequest(BaseModel):
     name: str
