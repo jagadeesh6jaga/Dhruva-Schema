@@ -1,12 +1,13 @@
 from pydantic import BaseModel
+from typing import Optional
 from .ulca_generic_inference_request import ULCAGenericInferenceRequestWithoutConfig
-from ..common import _ULCABaseMonolingualTaskConfig, _ULCATask
+from ..common import _ULCABaseMonolingualTaskConfig, _ULCATaskType
 
 class _ULCAPipelineTask(BaseModel):
-    serviceId: str
-    task: _ULCATask
+    serviceId: Optional[str]
+    taskType: _ULCATaskType
     config: dict
 
 class ULCAPipelineInferenceRequest(BaseModel):
-    taskSequence: list[_ULCAPipelineTask]
-    entryData: ULCAGenericInferenceRequestWithoutConfig
+    pipelineTasks: list[_ULCAPipelineTask]
+    inputData: ULCAGenericInferenceRequestWithoutConfig

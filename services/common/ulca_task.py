@@ -1,9 +1,13 @@
+from enum import Enum
 from pydantic import BaseModel
 
-TRANSLATION_TASK_TYPE = "translation"
-ASR_TASK_TYPE = "asr"
-TTS_TASK_TYPE = "tts"
-NER_TASK_TYPE = "ner"
+class _ULCATaskType(str, Enum):
+    ASR = "asr"
+    TRANSLATION = "translation"
+    TTS = "tts"
+    NER = "ner"
+    STS = "sts" # TODO: Remove
 
+# TODO: Depreciate soon
 class _ULCATask(BaseModel):
-    type: str
+    type: _ULCATaskType
