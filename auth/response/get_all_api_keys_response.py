@@ -1,15 +1,16 @@
 from typing import List
 
-from pydantic import BaseModel
+from pydantic import BaseModel, validator
+
+from schema.auth.common import ApiKey
 
 
-class _ApiKey(BaseModel):
-    # TODO: Add this field back once _id is correctly loaded in ApiKey model
-    # id: str
-    name: str
-    masked_key: str
-    active: bool
-    type: str
+class _ApiKey(ApiKey):
+    id: str
+
+    @validator("id", pre=True)
+    def typecast_id_to_str(cls, v):
+        return str(v)
 
 
 class GetAllApiKeysResponse(BaseModel):

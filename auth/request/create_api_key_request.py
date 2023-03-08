@@ -5,6 +5,7 @@ from ..common.api_key_type import ApiKeyType
 class CreateApiKeyRequest(BaseModel):
     name: str
     type: ApiKeyType = ApiKeyType.INFERENCE
+    regenerate: bool = False
 
     @validator("name")
     def check_api_key_name_format(cls, v):
