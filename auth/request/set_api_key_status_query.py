@@ -9,5 +9,5 @@ class ApiKeyAction(Enum):
 
 
 class SetApiKeyStatusQuery(BaseModel):
-    api_key_id: str
+    api_key_name: str
     action: ApiKeyAction
