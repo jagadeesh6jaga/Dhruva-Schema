@@ -10,3 +10,5 @@ from .service_create_request import ServiceCreateRequest
 from .ulca_pipeline_inference_request import ULCAPipelineInferenceRequest
 from .model_create_request import ModelCreateRequest
 from .model_view_request import ModelViewRequest
+from .service_update_request import ServiceUpdateRequest
+from .model_update_request import ModelUpdateRequest
