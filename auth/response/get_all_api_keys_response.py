@@ -1,7 +1,5 @@
 from typing import List
-
 from pydantic import BaseModel, validator
-
 from schema.auth.common import ApiKey
 
 
@@ -15,3 +13,8 @@ class _ApiKey(ApiKey):
 
 class GetAllApiKeysResponse(BaseModel):
     api_keys: List[_ApiKey]
+
+
+class GetAllApiKeysDetailsResponse(BaseModel):
+    api_keys: List[_ApiKey]
+    total_usage: int = 0
