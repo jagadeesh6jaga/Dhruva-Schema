@@ -7,12 +7,12 @@ class ModelUpdateRequest(BaseModel):
     id: str
     name: Optional[str]
     description: Optional[str]
-    refUrl: str
-    task: _ULCATask
-    languages: List[dict]
-    license: str
-    domain: List[str]
-    inferenceEndPoint: _InferenceEndPoint
+    refUrl: Optional[str]
+    task: Optional[_ULCATask]
+    languages: Optional[List[dict]]
+    license: Optional[str]
+    domain: Optional[List[str]]
+    inferenceEndPoint: Optional[_InferenceEndPoint]
     benchmarks: Optional[List[_Benchmark]]
-    submitter: _Submitter
+    submitter: Optional[_Submitter]
     
