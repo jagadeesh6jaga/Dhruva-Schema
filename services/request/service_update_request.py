@@ -3,7 +3,7 @@ from typing import Optional
 from ..common import _ULCALanguagePair
 
 class ServiceUpdateRequest(BaseModel):
-    id: str
+    serviceId: str
     name: Optional[str]
     serviceDescription: Optional[str]
     languagePair: Optional[_ULCALanguagePair]

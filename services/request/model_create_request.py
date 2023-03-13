@@ -1,6 +1,4 @@
-from module.services.model import Model
-
+from ..common import Model
 
 class ModelCreateRequest(Model):
-    class Config:
-        fields = {'id': {'exclude': True}}
+    pass
