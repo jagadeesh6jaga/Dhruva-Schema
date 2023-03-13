@@ -1,8 +1,7 @@
 from datetime import datetime
-from typing import  List, Optional
-from pydantic import BaseModel
+from typing import  List, Optional,Any
+from pydantic import BaseModel, Field
 from ..common import  _ULCATask
-
 
 class _OAuthId(BaseModel):
     oauthId: str
@@ -32,10 +31,7 @@ class _Schema(BaseModel):
 
 
 class _InferenceEndPoint(BaseModel):
-    class Config:
-        fields = {"schema_": "schema"}
-
-    schema_: _Schema
+    schema_: _Schema = Field(None,alias="schema")
 
 
 class _LanguagePair(BaseModel):
