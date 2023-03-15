@@ -1,11 +1,8 @@
-from pydantic import BaseModel
-from ..common import _ULCAText, _ULCALanguagePair
+from pydantic import BaseModel, create_model
+from ..common import _ULCAText, _ULCATranslationInferenceConfig, _ULCABaseInferenceRequestConfig
 
-
-class _ULCATranslationInferenceConfig(BaseModel):
-    language: _ULCALanguagePair
-
+_ULCATranslationInferenceRequestConfig = create_model("_ULCATranslationInferenceRequestConfig", __base__=(_ULCATranslationInferenceConfig, _ULCABaseInferenceRequestConfig))
 
 class ULCATranslationInferenceRequest(BaseModel):
     input: list[_ULCAText]
-    config: _ULCATranslationInferenceConfig
+    config: _ULCATranslationInferenceRequestConfig
