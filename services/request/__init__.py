@@ -12,3 +12,4 @@ from .model_create_request import ModelCreateRequest
 from .model_view_request import ModelViewRequest
 from .service_update_request import ServiceUpdateRequest
 from .model_update_request import ModelUpdateRequest
+from .feedback_submit_request import FeedbackSubmitRequest
