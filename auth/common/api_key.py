@@ -1,4 +1,6 @@
-from typing import Optional, List
+from datetime import datetime
+from typing import List, Optional
+
 from pydantic import BaseModel
 
 
@@ -12,4 +14,5 @@ class ApiKey(BaseModel):
     masked_key: str
     active: bool
     type: str
+    created_timestamp: datetime
     services: List[_ServiceUsage]
