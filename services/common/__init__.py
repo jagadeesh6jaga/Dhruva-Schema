@@ -12,3 +12,5 @@ from .ulca_tts_inference_config import _ULCATtsInferenceConfig
 from .ulca_translation_inference_config import _ULCATranslationInferenceConfig
 from .dhruva_model import Model
 from .dhruva_service import Service
+
+from .lang_to_script import LANG_CODE_TO_SCRIPT_CODE
