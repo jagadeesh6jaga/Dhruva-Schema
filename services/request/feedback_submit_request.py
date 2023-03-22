@@ -5,3 +5,4 @@ class FeedbackSubmitRequest(BaseModel):
     example: str
     rating: int
     comments: str
+    service_id: str
