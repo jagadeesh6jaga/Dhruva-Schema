@@ -1,7 +1,6 @@
 from bson import ObjectId
 from pydantic import BaseModel, EmailStr, Field
-
-from ..common.object_id import ObjectIdField
+from ...common import ObjectIdField
 
 
 class GetUsersResponse(BaseModel):
