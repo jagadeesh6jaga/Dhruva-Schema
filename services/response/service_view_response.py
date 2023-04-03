@@ -1,5 +1,5 @@
 from typing import List
-from module.services.model import Model
+from ..common.dhruva_model import Model
 from .service_response import ServiceResponse
 from ...auth.response.get_all_api_keys_response import _ApiKey
 

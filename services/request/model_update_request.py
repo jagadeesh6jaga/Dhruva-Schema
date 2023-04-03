@@ -1,7 +1,6 @@
-from typing import Optional
+from typing import Optional,List
 from pydantic import BaseModel
-from module.services.model.model import *
-from module.services.model.model import _InferenceEndPoint,_Benchmark,_Submitter
+from ..common.dhruva_model import _InferenceEndPoint,_Benchmark,_Submitter
 from schema.services.common.ulca_task import _ULCATask
 class ModelUpdateRequest(BaseModel):
     modelId: str
