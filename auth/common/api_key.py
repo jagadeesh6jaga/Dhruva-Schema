@@ -1,7 +1,7 @@
 from datetime import datetime
 from typing import List, Optional
 
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 
 class _ServiceUsage(BaseModel):
@@ -9,10 +9,17 @@ class _ServiceUsage(BaseModel):
     usage: int
 
 
-class ApiKey(BaseModel):
+class BaseApiKey(BaseModel):
     name: str
+
+
+class ApiKey(BaseApiKey):
     masked_key: str
     active: bool
     type: str
     created_timestamp: datetime
     services: List[_ServiceUsage]
+
+
+class ServiceLevelApiKeyDisplay(BaseApiKey):
+    usage: int = 0
