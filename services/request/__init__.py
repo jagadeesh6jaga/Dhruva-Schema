@@ -26,3 +26,4 @@ from .ulca_tts_inference_request import (
     ULCATtsInferenceRequest,
     _ULCATtsInferenceRequestConfig,
 )
+from .service_heartbeat_request import ServiceHeartbeatRequest
