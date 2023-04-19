@@ -2,9 +2,7 @@ from typing import Optional, Union
 
 from pydantic import BaseModel
 
-from schema.services.common import _ControlConfig
-
-from ..common import _ULCABaseMonolingualTaskConfig, _ULCATaskType
+from ..common import _ControlConfig, _ULCABaseMonolingualTaskConfig, _ULCATaskType
 from .ulca_asr_inference_request import _ULCAAsrInferenceRequestConfig
 from .ulca_generic_inference_request import ULCAGenericInferenceRequestWithoutConfig
 from .ulca_translation_inference_request import _ULCATranslationInferenceRequestConfig
