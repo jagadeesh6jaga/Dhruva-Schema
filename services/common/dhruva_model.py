@@ -3,7 +3,7 @@ from typing import Any, List, Optional
 
 from pydantic import BaseModel, Field
 
-from ulca_task import _ULCATask
+from .ulca_task import _ULCATask
 
 
 class _OAuthId(BaseModel):
