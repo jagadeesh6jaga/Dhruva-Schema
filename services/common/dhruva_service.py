@@ -1,5 +1,6 @@
 from pydantic import BaseModel
 
+
 class Service(BaseModel):
     serviceId: str
     name: str
@@ -8,4 +9,4 @@ class Service(BaseModel):
     publishedOn: int
     modelId: str
     endpoint: str
-    api_key:str
+    api_key: str
