@@ -11,7 +11,6 @@ class _ULCAAudio(BaseModel):
 
     @root_validator()
     def check_and_fetch_audio(cls, values: Dict[str, Any]):
-        print(values)
         if values.get("audioContent"):
             return values
         elif values.get("audioUri"):
