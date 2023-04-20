@@ -1,3 +1,5 @@
+from typing import List
+
 from pydantic import BaseModel, create_model
 
 from ..common import (
@@ -14,6 +16,6 @@ _ULCAAsrInferenceRequestConfig = create_model(
 
 
 class ULCAAsrInferenceRequest(BaseModel):
-    audio: list[_ULCAAudio]
+    audio: List[_ULCAAudio]
     config: _ULCAAsrInferenceRequestConfig
     controlConfig: _ControlConfig
