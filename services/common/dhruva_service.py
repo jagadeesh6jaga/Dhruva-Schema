@@ -1,4 +1,17 @@
-from pydantic import BaseModel
+from typing import Dict, List, Optional
+
+from pydantic import BaseModel, Field
+
+
+class _Benchmark(BaseModel):
+    output_length: int
+    generated: int
+    actual: int
+    tks: int
+    fifty: float = Field(alias="50%")
+    ninety_nine: float = Field(alias="99%")
+    language: str
+
 
 class Service(BaseModel):
     serviceId: str
@@ -8,4 +21,5 @@ class Service(BaseModel):
     publishedOn: int
     modelId: str
     endpoint: str
-    api_key:str
+    api_key: str
+    benchmarks: Optional[Dict[str, List[_Benchmark]]]
