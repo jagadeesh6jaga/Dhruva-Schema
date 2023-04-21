@@ -1,7 +1,7 @@
-from pydantic import BaseModel, create_model
+from pydantic import create_model
 
 from ..common import (
-    _ControlConfig,
+    _ULCABaseInferenceRequest,
     _ULCABaseInferenceRequestConfig,
     _ULCAText,
     _ULCATtsInferenceConfig,
@@ -13,7 +13,6 @@ _ULCATtsInferenceRequestConfig = create_model(
 )
 
 
-class ULCATtsInferenceRequest(BaseModel):
+class ULCATtsInferenceRequest(_ULCABaseInferenceRequest):
     input: list[_ULCAText]
     config: _ULCATtsInferenceRequestConfig
-    controlConfig: _ControlConfig

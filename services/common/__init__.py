@@ -3,6 +3,7 @@ from .dhruva_service import Service
 from .lang_to_script import LANG_CODE_TO_SCRIPT_CODE
 from .ulca_audio import _ULCAAudio
 from .ulca_base_audio_config import _ULCABaseAudioConfig
+from .ulca_base_inference_request import _ULCABaseInferenceRequest
 from .ulca_base_inference_request_config import _ULCABaseInferenceRequestConfig
 from .ulca_base_monolingual_config import _ULCABaseMonolingualTaskConfig
 from .ulca_control_config import _ControlConfig

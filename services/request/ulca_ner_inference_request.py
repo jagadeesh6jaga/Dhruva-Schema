@@ -1,8 +1,9 @@
 from typing import List
-from pydantic import BaseModel, create_model
+
+from pydantic import create_model
 
 from ..common import (
-    _ControlConfig,
+    _ULCABaseInferenceRequest,
     _ULCABaseInferenceRequestConfig,
     _ULCABaseMonolingualTaskConfig,
     _ULCAText,
@@ -14,7 +15,6 @@ _ULCANerInferenceRequestConfig = create_model(
 )
 
 
-class ULCANerInferenceRequest(BaseModel):
+class ULCANerInferenceRequest(_ULCABaseInferenceRequest):
     input: List[_ULCAText]
     config: _ULCANerInferenceRequestConfig
-    controlConfig: _ControlConfig
