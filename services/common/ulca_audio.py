@@ -9,19 +9,19 @@ class _ULCAAudio(BaseModel):
     audioContent: Optional[str]
     audioUri: Optional[AnyHttpUrl]
 
-    @root_validator()
-    def check_and_fetch_audio(cls, values: Dict[str, Any]):
-        if values.get("audioContent"):
-            return values
-        elif values.get("audioUri"):
-            try:
-                values["audioContent"] = base64.b64encode(
-                    urlopen(values["audioUri"]).read()
-                ).decode("utf-8")
-                return values
-            except Exception as e:
-                raise ValueError(
-                    "Failed to fetch audio content from url {}".format(cls.audioUri)
-                )
-        else:
-            raise ValueError("No audio provided")
+    # @root_validator()
+    # def check_and_fetch_audio(cls, values: Dict[str, Any]):
+    #     if values.get("audioContent"):
+    #         return values
+    #     elif values.get("audioUri"):
+    #         try:
+    #             values["audioContent"] = base64.b64encode(
+    #                 urlopen(values["audioUri"]).read()
+    #             ).decode("utf-8")
+    #             return values
+    #         except Exception as e:
+    #             raise ValueError(
+    #                 "Failed to fetch audio content from url {}".format(cls.audioUri)
+    #             )
+    #     else:
+    #         raise ValueError("No audio provided")
