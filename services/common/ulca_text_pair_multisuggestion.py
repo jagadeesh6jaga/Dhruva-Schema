@@ -1,4 +1,5 @@
 from typing import List
+
 from .ulca_text import _ULCAText
 
 
