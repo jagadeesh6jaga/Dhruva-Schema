@@ -6,7 +6,7 @@ from pydantic import BaseModel, EmailStr, validator
 class ULCACreateApiKeyRequest(BaseModel):
     emailId: EmailStr
     appName: str
-    dataTracking: bool = False
+    dataTracking: bool
 
     @validator("appName")
     def check_api_key_name_format(cls, v):
