@@ -1,12 +1,16 @@
 from typing import Any, Dict, List, Optional
 
+from pydantic import BaseModel
+
 from ..common import _ULCAAudio, _ULCABaseInferenceRequest, _ULCAText
 
 
-class ULCAGenericInferenceRequestWithoutConfig(_ULCABaseInferenceRequest):
+class ULCAGenericInferenceRequestWithoutConfig(BaseModel):
     input: Optional[List[_ULCAText]]
     audio: Optional[List[_ULCAAudio]]
 
 
-class ULCAGenericInferenceRequest(ULCAGenericInferenceRequestWithoutConfig):
+class ULCAGenericInferenceRequest(
+    ULCAGenericInferenceRequestWithoutConfig, _ULCABaseInferenceRequest
+):
     config: dict
