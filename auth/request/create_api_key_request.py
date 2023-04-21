@@ -11,7 +11,7 @@ class CreateApiKeyRequest(BaseModel):
     type: ApiKeyType = ApiKeyType.INFERENCE
     regenerate: bool = False
     target_user_id: Optional[str] = None
-    dataTracking: bool
+    data_tracking: bool
 
     @validator("name")
     def check_api_key_name_format(cls, v):
