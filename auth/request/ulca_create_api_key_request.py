@@ -3,9 +3,10 @@ import re
 from pydantic import BaseModel, EmailStr, validator
 
 
-class ULCAApiKeyRequest(BaseModel):
+class ULCACreateApiKeyRequest(BaseModel):
     emailId: EmailStr
     appName: str
+    dataTracking: bool
 
     @validator("appName")
     def check_api_key_name_format(cls, v):
