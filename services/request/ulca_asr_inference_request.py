@@ -1,10 +1,20 @@
-from pydantic import BaseModel, create_model
-from ..common import _ULCAAudio
-from ..common import _ULCABaseAudioConfig, _ULCABaseInferenceRequestConfig
+from typing import List
 
-_ULCAAsrInferenceRequestConfig = create_model("_ULCAAsrInferenceRequestConfig", __base__=(_ULCABaseAudioConfig, _ULCABaseInferenceRequestConfig))
+from pydantic import create_model
+
+from ..common import (
+    _ULCAAudio,
+    _ULCABaseAudioConfig,
+    _ULCABaseInferenceRequest,
+    _ULCABaseInferenceRequestConfig,
+)
+
+_ULCAAsrInferenceRequestConfig = create_model(
+    "_ULCAAsrInferenceRequestConfig",
+    __base__=(_ULCABaseAudioConfig, _ULCABaseInferenceRequestConfig),
+)
 
 
-class ULCAAsrInferenceRequest(BaseModel):
-    audio: list[_ULCAAudio]
+class ULCAAsrInferenceRequest(_ULCABaseInferenceRequest):
+    audio: List[_ULCAAudio]
     config: _ULCAAsrInferenceRequestConfig

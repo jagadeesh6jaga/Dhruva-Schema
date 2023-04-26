@@ -19,6 +19,7 @@ class ApiKey(BaseApiKey):
     type: str
     created_timestamp: datetime
     services: List[_ServiceUsage]
+    data_tracking: bool
 
 
 class ServiceLevelApiKeyDisplay(BaseApiKey):

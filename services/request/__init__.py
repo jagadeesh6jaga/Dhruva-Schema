@@ -22,6 +22,10 @@ from .ulca_translation_inference_request import (
     ULCATranslationInferenceRequest,
     _ULCATranslationInferenceRequestConfig,
 )
+from .ulca_transliteration_inference_request import (
+    ULCATransliterationInferenceRequest,
+    _ULCATransliterationInferenceRequestConfig,
+)
 from .ulca_tts_inference_request import (
     ULCATtsInferenceRequest,
     _ULCATtsInferenceRequestConfig,
