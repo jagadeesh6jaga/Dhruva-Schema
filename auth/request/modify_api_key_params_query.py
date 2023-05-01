@@ -11,7 +11,7 @@ class ModifyApiKeyParamsQuery(BaseModel):
 
     @root_validator()
     def check_and_fetch_audio(cls, values: Dict[str, Any]):
-        if not values.get("active") and not values.get("data_tracking"):
+        if values.get("active") == None and values.get("data_tracking") == None:
             raise ValueError("Atleast one of data_tracking or active must be provided")
         else:
             return values
