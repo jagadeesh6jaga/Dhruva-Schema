@@ -4,6 +4,7 @@ from .get_all_api_keys_request import GetAllApiKeysRequest
 from .get_api_key_query import GetApiKeyQuery
 from .get_user_query import GetUserQuery
 from .modify_api_key_params_query import ModifyApiKeyParamsQuery
+from .modify_user_query import ModifyUserQuery
 from .refresh_request import RefreshRequest
 from .signin_request import SignInRequest
 from .ulca_create_api_key_request import ULCACreateApiKeyRequest
