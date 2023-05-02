@@ -1,5 +1,4 @@
 from .create_snapshot_request import CreateSnapshotRequest
-from .feedback_submit_request import FeedbackSubmitRequest
 from .model_create_request import ModelCreateRequest
 from .model_update_request import ModelUpdateRequest
 from .model_view_request import ModelViewRequest
@@ -31,3 +30,4 @@ from .ulca_tts_inference_request import (
     _ULCATtsInferenceRequestConfig,
 )
 from .service_heartbeat_request import ServiceHeartbeatRequest
+from .feedback_submit_request import ULCAFeedbackRequest
