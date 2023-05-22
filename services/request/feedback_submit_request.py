@@ -12,7 +12,8 @@ from . import (
     _ULCATransliterationInferenceRequestConfig,
     _ULCATtsInferenceRequestConfig,
     _ULCAAsrInferenceRequestConfig,
-    _ULCANerInferenceRequestConfig
+    _ULCANerInferenceRequestConfig,
+    ULCAPipelineInferenceRequest
 )
 from .ulca_generic_inference_request import ULCAGenericInferenceRequestWithoutConfig
 
@@ -47,9 +48,7 @@ class PipelineOutput(BaseModel):
     pipelineResponse: List[ULCAGenericInferenceResponse]
 
 
-class PipelineInput(BaseModel):
-    pipelineTasks: List[RequestConfig]
-    inputData: List[ULCAGenericInferenceRequestWithoutConfig]
+class PipelineInput(ULCAPipelineInferenceRequest):
     controlConfig: _ControlConfig
 
 
