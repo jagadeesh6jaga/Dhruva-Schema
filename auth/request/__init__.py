@@ -8,4 +8,4 @@ from .modify_user_query import ModifyUserQuery
 from .refresh_request import RefreshRequest
 from .signin_request import SignInRequest
 from .ulca_create_api_key_request import ULCACreateApiKeyRequest
-from .ulca_set_api_key_tracking_query import ULCASetApiKeyTrackingQuery
+from .ulca_set_api_key_tracking_request import ULCASetApiKeyTrackingRequest
