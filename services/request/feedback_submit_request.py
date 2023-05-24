@@ -5,7 +5,6 @@ from pydantic import BaseModel
 from ..response import ULCAGenericInferenceResponse
 from ..common import (
     _ULCATaskType,
-    _ControlConfig,
 )
 from . import (
     _ULCATranslationInferenceRequestConfig,
@@ -15,22 +14,16 @@ from . import (
     _ULCANerInferenceRequestConfig,
     ULCAPipelineInferenceRequest
 )
-from .ulca_generic_inference_request import ULCAGenericInferenceRequestWithoutConfig
 
 
 class _FeedbackType(str, Enum):
     RATING = "rating"
     COMMENT = "comment"
     THUMBS = "thumbs"
-    RATING_LIST = "ratingList"
-    COMMENT_LIST = "commentList"
-    THUMBS_LIST = "thumbsList"
-    CHECKBOX_LIST = "checkboxList"
-
-
-class _LanguagePair(BaseModel):
-    sourceLanguage: str
-    targetLanguage: Optional[str]
+    RATING_LIST = "rating-list"
+    COMMENT_LIST = "comment-list"
+    THUMBS_LIST = "thumbs-list"
+    CHECKBOX_LIST = "checkbox-list"
 
 
 class RequestConfig(BaseModel):
@@ -44,12 +37,11 @@ class RequestConfig(BaseModel):
     ]
 
 class PipelineOutput(BaseModel):
-    controlConfig: _ControlConfig
     pipelineResponse: List[ULCAGenericInferenceResponse]
 
 
 class PipelineInput(ULCAPipelineInferenceRequest):
-    controlConfig: _ControlConfig
+    pass
 
 
 class BaseFeedbackType(BaseModel):
