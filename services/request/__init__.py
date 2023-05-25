@@ -31,3 +31,4 @@ from .ulca_tts_inference_request import (
 )
 from .service_heartbeat_request import ServiceHeartbeatRequest
 from .feedback_submit_request import ULCAFeedbackRequest
+from .ulca_feedback_questions_request import ULCAFeedbackQuestionRequest
