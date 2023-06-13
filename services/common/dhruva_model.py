@@ -29,8 +29,8 @@ class _ModelProcessingType(BaseModel):
 
 class _Schema(BaseModel):
     modelProcessingType: Optional[_ModelProcessingType]
-    request: List[str, Any]
-    response: List[str, Any]
+    request: Dict[str, Any]
+    response: Dict[str, Any]
 
 
 class _InferenceEndPoint(BaseModel):
