@@ -2,6 +2,9 @@ from enum import Enum
 from typing import List, Optional, Union
 
 from pydantic import BaseModel
+from .ulca_asr_inference_request import _ULCAAsrInferenceRequestConfig
+from .ulca_ner_inference_request import _ULCANerInferenceRequestConfig
+from .ulca_tts_inference_request import _ULCATtsInferenceRequestConfig
 
 from ..common import (
     _ULCATaskType,
@@ -9,12 +12,7 @@ from ..common import (
     _ULCATransliterationInferenceConfig,
 )
 from ..response import ULCAGenericInferenceResponse
-from . import (
-    ULCAPipelineInferenceRequest,
-    _ULCAAsrInferenceRequestConfig,
-    _ULCANerInferenceRequestConfig,
-    _ULCATtsInferenceRequestConfig,
-)
+from .ulca_pipeline_inference_request import ULCAPipelineInferenceRequest
 
 
 class _FeedbackType(str, Enum):
