@@ -13,7 +13,7 @@ from ..common.ulca_language import _ULCALanguage
 class _ULCATtsInferenceRequestConfig(_ULCABaseInferenceRequestConfig):
     gender: Gender
     samplingRate: Optional[int] = 22050
-    audioFormat: AudioFormat = AudioFormat("wav")
+    audioFormat: AudioFormat = AudioFormat.WAV
     language: _ULCALanguage
 
 

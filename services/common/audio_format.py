@@ -1,7 +1,7 @@
 from enum import Enum
 
 
-class AudioFormat(Enum):
+class AudioFormat(str, Enum):
     WAV = "wav"
     MP3 = "mp3"
     FLAC = "flac"

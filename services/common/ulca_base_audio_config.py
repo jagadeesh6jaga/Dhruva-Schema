@@ -7,7 +7,7 @@ from .ulca_language import _ULCALanguage
 
 
 class _ULCABaseAudioConfig(BaseModel):
-    audioFormat: AudioFormat = AudioFormat("wav")
+    audioFormat: AudioFormat = AudioFormat.WAV
     language: _ULCALanguage
     encoding: Optional[str]
     samplingRate: Optional[int]
