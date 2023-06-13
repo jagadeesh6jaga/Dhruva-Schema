@@ -1,6 +1,8 @@
 from typing import Optional
+
 from pydantic import BaseModel
-from ..common import _ULCAText, _ULCABaseAudioConfig, _ULCATaskType
+
+from ..common import _ULCABaseAudioConfig, _ULCATaskType, _ULCAText
 
 
 class ULCAAsrInferenceResponse(BaseModel):

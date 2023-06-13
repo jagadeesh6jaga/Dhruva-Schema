@@ -1,6 +1,8 @@
 from typing import Optional
+
 from pydantic import BaseModel
-from ..common import _ULCATextPair, _ULCATranslationInferenceConfig, _ULCATaskType
+
+from ..common import _ULCATaskType, _ULCATextPair, _ULCATranslationInferenceConfig
 
 
 class ULCATranslationInferenceResponse(BaseModel):

@@ -1,6 +1,12 @@
 from typing import Optional
+
 from pydantic import BaseModel
-from ..common import _ULCATextPairMultisuggestion, _ULCATransliterationInferenceConfig, _ULCATaskType
+
+from ..common import (
+    _ULCATaskType,
+    _ULCATextPairMultisuggestion,
+    _ULCATransliterationInferenceConfig,
+)
 
 
 class ULCATransliterationInferenceResponse(BaseModel):

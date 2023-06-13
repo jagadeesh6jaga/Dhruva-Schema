@@ -5,14 +5,13 @@ from pydantic import create_model
 from ..common import (
     _ULCABaseInferenceRequest,
     _ULCABaseInferenceRequestConfig,
-    _ULCABaseMonolingualTaskConfig,
+    _ULCALanguage,
     _ULCAText,
 )
 
-_ULCANerInferenceRequestConfig = create_model(
-    "_ULCANerInferenceRequestConfig",
-    __base__=(_ULCABaseMonolingualTaskConfig, _ULCABaseInferenceRequestConfig),
-)
+
+class _ULCANerInferenceRequestConfig(_ULCABaseInferenceRequestConfig):
+    language: _ULCALanguage
 
 
 class ULCANerInferenceRequest(_ULCABaseInferenceRequest):

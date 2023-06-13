@@ -1,18 +1,22 @@
-from pydantic import create_model
+from typing import List, Optional
 
 from ..common import (
+    AudioFormat,
+    Gender,
     _ULCABaseInferenceRequest,
     _ULCABaseInferenceRequestConfig,
     _ULCAText,
-    _ULCATtsInferenceConfig,
 )
+from ..common.ulca_language import _ULCALanguage
 
-_ULCATtsInferenceRequestConfig = create_model(
-    "_ULCATtsInferenceRequestConfig",
-    __base__=(_ULCATtsInferenceConfig, _ULCABaseInferenceRequestConfig),
-)
+
+class _ULCATtsInferenceRequestConfig(_ULCABaseInferenceRequestConfig):
+    gender: Gender
+    samplingRate: Optional[int] = 22050
+    audioFormat: AudioFormat = AudioFormat("wav")
+    language: _ULCALanguage
 
 
 class ULCATtsInferenceRequest(_ULCABaseInferenceRequest):
-    input: list[_ULCAText]
+    input: List[_ULCAText]
     config: _ULCATtsInferenceRequestConfig

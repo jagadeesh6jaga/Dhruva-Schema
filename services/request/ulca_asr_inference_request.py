@@ -4,15 +4,16 @@ from pydantic import create_model
 
 from ..common import (
     _ULCAAudio,
-    _ULCABaseAudioConfig,
     _ULCABaseInferenceRequest,
     _ULCABaseInferenceRequestConfig,
 )
+from ..common.ulca_base_audio_config import _ULCABaseAudioConfig
 
-_ULCAAsrInferenceRequestConfig = create_model(
-    "_ULCAAsrInferenceRequestConfig",
-    __base__=(_ULCABaseAudioConfig, _ULCABaseInferenceRequestConfig),
-)
+
+class _ULCAAsrInferenceRequestConfig(
+    _ULCABaseInferenceRequestConfig, _ULCABaseAudioConfig
+):
+    pass
 
 
 class ULCAAsrInferenceRequest(_ULCABaseInferenceRequest):
