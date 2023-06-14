@@ -13,4 +13,4 @@ class ULCAGenericInferenceRequestWithoutConfig(BaseModel):
 class ULCAGenericInferenceRequest(
     ULCAGenericInferenceRequestWithoutConfig, _ULCABaseInferenceRequest
 ):
-    config: dict
+    pass

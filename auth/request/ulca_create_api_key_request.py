@@ -13,4 +13,8 @@ class ULCACreateApiKeyRequest(BaseModel):
         name_regex = r"^[a-z0-9\.\-@_]+$"
         if not re.search(name_regex, v):
             raise ValueError("Name has invalid characters")
-        return v
+        return v.lower()
+
+    @validator("emailId")
+    def make_email_id_lowercase(cls, v):
+        return v.lower()

@@ -1,7 +1,12 @@
-from typing import Optional,List
+from typing import List, Optional
+
 from pydantic import BaseModel
-from ..common.dhruva_model import _InferenceEndPoint,_Benchmark,_Submitter
+
 from schema.services.common.ulca_task import _ULCATask
+
+from ..common.dhruva_model import _Benchmark, _InferenceEndPoint, _Submitter
+
+
 class ModelUpdateRequest(BaseModel):
     modelId: str
     name: Optional[str]
@@ -14,4 +19,3 @@ class ModelUpdateRequest(BaseModel):
     inferenceEndPoint: Optional[_InferenceEndPoint]
     benchmarks: Optional[List[_Benchmark]]
     submitter: Optional[_Submitter]
-    

@@ -1,5 +1,5 @@
 from datetime import datetime
-from typing import Any, List, Optional
+from typing import Any, Dict, List, Optional
 
 from pydantic import BaseModel, Field
 
@@ -29,8 +29,8 @@ class _ModelProcessingType(BaseModel):
 
 class _Schema(BaseModel):
     modelProcessingType: Optional[_ModelProcessingType]
-    request: dict
-    response: dict
+    request: Dict[str, Any]
+    response: Dict[str, Any]
 
 
 class _InferenceEndPoint(BaseModel):
@@ -69,7 +69,7 @@ class Model(BaseModel):
     description: str
     refUrl: str
     task: _ULCATask
-    languages: List[dict]
+    languages: List[Dict[str, Any]]
     license: str
     domain: List[str]
     inferenceEndPoint: _InferenceEndPoint

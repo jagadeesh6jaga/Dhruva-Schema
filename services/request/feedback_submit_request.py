@@ -1,19 +1,18 @@
 from enum import Enum
 from typing import List, Optional, Union
-from pydantic import BaseModel
 
-from ..response import ULCAGenericInferenceResponse
+from pydantic import BaseModel
+from .ulca_asr_inference_request import _ULCAAsrInferenceRequestConfig
+from .ulca_ner_inference_request import _ULCANerInferenceRequestConfig
+from .ulca_tts_inference_request import _ULCATtsInferenceRequestConfig
+
 from ..common import (
     _ULCATaskType,
+    _ULCATranslationInferenceConfig,
+    _ULCATransliterationInferenceConfig,
 )
-from . import (
-    _ULCATranslationInferenceRequestConfig,
-    _ULCATransliterationInferenceRequestConfig,
-    _ULCATtsInferenceRequestConfig,
-    _ULCAAsrInferenceRequestConfig,
-    _ULCANerInferenceRequestConfig,
-    ULCAPipelineInferenceRequest
-)
+from ..response import ULCAGenericInferenceResponse
+from .ulca_pipeline_inference_request import ULCAPipelineInferenceRequest
 
 
 class _FeedbackType(str, Enum):
@@ -30,11 +29,12 @@ class RequestConfig(BaseModel):
     taskType: _ULCATaskType
     config: Union[
         _ULCANerInferenceRequestConfig,
-        _ULCATranslationInferenceRequestConfig,
-        _ULCATransliterationInferenceRequestConfig,
+        _ULCATranslationInferenceConfig,
+        _ULCATransliterationInferenceConfig,
         _ULCAAsrInferenceRequestConfig,
         _ULCATtsInferenceRequestConfig,
     ]
+
 
 class PipelineOutput(BaseModel):
     pipelineResponse: List[ULCAGenericInferenceResponse]
