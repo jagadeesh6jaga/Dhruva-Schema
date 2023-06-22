@@ -6,8 +6,8 @@ from pydantic import BaseModel, root_validator
 
 class FeedbackDownloadQuery(BaseModel):
     serviceId: Optional[str]
-    fromDate: datetime
-    toDate: datetime
+    fromDate: int
+    toDate: int
 
     @root_validator
     def validate_date_ranges(cls, values: Dict[str, Any]):
