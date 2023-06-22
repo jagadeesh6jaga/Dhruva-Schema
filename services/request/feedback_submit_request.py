@@ -45,6 +45,9 @@ class PipelineOutput(BaseModel):
 class PipelineInput(ULCAPipelineInferenceRequest):
     pass
 
+    class Config:
+        fields = {"controlConfig": {"exclude": True}}
+
 
 class BaseFeedbackType(BaseModel):
     parameterName: str
