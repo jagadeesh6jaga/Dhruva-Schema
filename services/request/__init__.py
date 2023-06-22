@@ -1,4 +1,5 @@
 from .create_snapshot_request import CreateSnapshotRequest
+from .feedback_download_query import FeedbackDownloadQuery
 from .feedback_submit_request import ULCAFeedbackRequest
 from .model_create_request import ModelCreateRequest
 from .model_update_request import ModelUpdateRequest
