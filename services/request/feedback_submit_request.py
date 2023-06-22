@@ -102,7 +102,7 @@ class ULCAFeedbackRequest(BaseModel):
 
     @validator("feedbackTimeStamp")
     def check_feedback_timestamp_format(cls, v):
-        if v <= 9999999999:
-            raise ValueError("UNIX Timestamp should be in milliseconds")
+        if v > 9999999999:
+            raise ValueError("UNIX Timestamp should be in seconds")
 
         return v

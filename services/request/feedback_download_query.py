@@ -11,10 +11,13 @@ class FeedbackDownloadQuery(BaseModel):
 
     @root_validator
     def validate_date_ranges(cls, values: Dict[str, Any]):
-        if values["fromDate"] <= 9999999999 or values["password"] <= 9999999999:
-            raise ValueError("UNIX Timestamp should be in milliseconds")
+        if values["fromDate"] > 9999999999 or values["password"] > 9999999999:
+            raise ValueError("UNIX Timestamp should be in seconds")
 
-        if values["fromDate"] > values["password"]:
+        if values["fromDate"] > values["toDate"]:
             raise ValueError("From Date should be less than equal to To Date")
+
+        if values["toDate"] - values["fromDate"] > 604800:
+            raise ValueError("Max date range should be 1 week")
 
         return values
