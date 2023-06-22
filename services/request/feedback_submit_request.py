@@ -92,7 +92,7 @@ class PipelineFeedback(BaseModel):
 
 
 class ULCAFeedbackRequest(BaseModel):
-    feedbackTimeStamp: int = int(datetime.now().timestamp() * 1000)
+    feedbackTimeStamp: int = int(datetime.now().timestamp())
     feedbackLanguage: str
     pipelineInput: PipelineInput
     pipelineOutput: Optional[PipelineOutput]
