@@ -13,7 +13,9 @@ from ..common import _ULCATaskType
 from ..response import ULCAGenericInferenceResponse
 from .ulca_asr_inference_request import _ULCAAsrInferenceRequestConfig
 from .ulca_ner_inference_request import _ULCANerInferenceRequestConfig
-from .ulca_pipeline_inference_request import ULCAPipelineInferenceRequest
+from .ulca_pipeline_inference_request import (
+    ULCAPipelineInferenceRequestWithoutControlConfig,
+)
 from .ulca_tts_inference_request import _ULCATtsInferenceRequestConfig
 
 
@@ -42,11 +44,8 @@ class PipelineOutput(BaseModel):
     pipelineResponse: List[ULCAGenericInferenceResponse]
 
 
-class PipelineInput(ULCAPipelineInferenceRequest):
+class PipelineInput(ULCAPipelineInferenceRequestWithoutControlConfig):
     pass
-
-    class Config:
-        fields = {"controlConfig": {"exclude": True}}
 
 
 class BaseFeedbackType(BaseModel):
