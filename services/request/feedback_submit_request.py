@@ -1,18 +1,22 @@
+from datetime import datetime
 from enum import Enum
 from typing import List, Optional, Union
 
-from pydantic import BaseModel
-from .ulca_asr_inference_request import _ULCAAsrInferenceRequestConfig
-from .ulca_ner_inference_request import _ULCANerInferenceRequestConfig
-from .ulca_tts_inference_request import _ULCATtsInferenceRequestConfig
+from pydantic import BaseModel, validator
 
-from ..common import (
-    _ULCATaskType,
+from schema.services.common import (
     _ULCATranslationInferenceConfig,
     _ULCATransliterationInferenceConfig,
 )
+
+from ..common import _ULCATaskType
 from ..response import ULCAGenericInferenceResponse
-from .ulca_pipeline_inference_request import ULCAPipelineInferenceRequest
+from .ulca_asr_inference_request import _ULCAAsrInferenceRequestConfig
+from .ulca_ner_inference_request import _ULCANerInferenceRequestConfig
+from .ulca_pipeline_inference_request import (
+    ULCAPipelineInferenceRequestWithoutControlConfig,
+)
+from .ulca_tts_inference_request import _ULCATtsInferenceRequestConfig
 
 
 class _FeedbackType(str, Enum):
@@ -40,7 +44,7 @@ class PipelineOutput(BaseModel):
     pipelineResponse: List[ULCAGenericInferenceResponse]
 
 
-class PipelineInput(ULCAPipelineInferenceRequest):
+class PipelineInput(ULCAPipelineInferenceRequestWithoutControlConfig):
     pass
 
 
@@ -90,10 +94,17 @@ class PipelineFeedback(BaseModel):
 
 
 class ULCAFeedbackRequest(BaseModel):
-    feedbackTimeStamp: Optional[int]
+    feedbackTimeStamp: int = int(datetime.now().timestamp())
     feedbackLanguage: str
     pipelineInput: PipelineInput
     pipelineOutput: Optional[PipelineOutput]
     suggestedPipelineOutput: Optional[PipelineOutput]
     pipelineFeedback: Optional[PipelineFeedback]
     taskFeedback: Optional[List[TaskFeedback]]
+
+    @validator("feedbackTimeStamp")
+    def check_feedback_timestamp_format(cls, v):
+        if v > 9999999999:
+            raise ValueError("UNIX Timestamp should be in seconds")
+
+        return v
