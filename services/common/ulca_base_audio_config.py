@@ -11,4 +11,3 @@ class _ULCABaseAudioConfig(BaseModel):
     language: _ULCALanguage
     encoding: Optional[str]
     samplingRate: Optional[int]
-    postProcessors: Optional[list[str]]
