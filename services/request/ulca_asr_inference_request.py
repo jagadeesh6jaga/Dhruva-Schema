@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Optional
 
 from pydantic import create_model
 
@@ -13,7 +13,7 @@ from ..common.ulca_base_audio_config import _ULCABaseAudioConfig
 class _ULCAAsrInferenceRequestConfig(
     _ULCABaseInferenceRequestConfig, _ULCABaseAudioConfig
 ):
-    pass
+    postProcessors: Optional[list[str]]
 
 
 class ULCAAsrInferenceRequest(_ULCABaseInferenceRequest):
