@@ -12,6 +12,7 @@ from ..common.ulca_base_audio_config import _ULCABaseAudioConfig
 class ULCATextFormat(str, Enum):
     SRT = "srt"
     TRANSCRIPT = "transcript"
+    WEBVTT = "webvtt"
 
 
 class _ULCAAsrInferenceRequestConfig(
