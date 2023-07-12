@@ -1,6 +1,5 @@
+from enum import Enum
 from typing import List, Optional
-
-from pydantic import create_model
 
 from ..common import (
     _ULCAAudio,
@@ -10,10 +9,17 @@ from ..common import (
 from ..common.ulca_base_audio_config import _ULCABaseAudioConfig
 
 
+class ULCATextFormat(str, Enum):
+    SRT = "srt"
+    TRANSCRIPT = "transcript"
+    WEBVTT = "webvtt"
+
+
 class _ULCAAsrInferenceRequestConfig(
     _ULCABaseInferenceRequestConfig, _ULCABaseAudioConfig
 ):
     postProcessors: Optional[list[str]]
+    transcriptionFormat: ULCATextFormat = ULCATextFormat.TRANSCRIPT
 
 
 class ULCAAsrInferenceRequest(_ULCABaseInferenceRequest):
