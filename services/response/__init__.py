@@ -1,3 +1,5 @@
+from typing import Union
+
 from .create_grafana_snapshot_response import CreateGrafanaSnapshotResponse
 from .service_list_response import ServiceListResponse
 from .service_response import ServiceResponse
@@ -12,3 +14,12 @@ from .ulca_transliteration_inference_response import (
     ULCATransliterationInferenceResponse,
 )
 from .ulca_tts_inference_response import ULCATtsInferenceResponse
+
+ULCAInferenceResponse = Union[
+    ULCAGenericInferenceResponse,
+    ULCAAsrInferenceResponse,
+    ULCATranslationInferenceResponse,
+    ULCATransliterationInferenceResponse,
+    ULCATtsInferenceResponse,
+    ULCANerInferenceResponse,
+]

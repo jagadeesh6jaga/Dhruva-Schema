@@ -1,3 +1,5 @@
+from typing import Union
+
 from .create_snapshot_request import CreateSnapshotRequest
 from .feedback_download_query import FeedbackDownloadQuery
 from .feedback_submit_request import ULCAFeedbackRequest
@@ -27,3 +29,12 @@ from .ulca_tts_inference_request import (
     ULCATtsInferenceRequest,
     _ULCATtsInferenceRequestConfig,
 )
+
+ULCAInferenceRequest = Union[
+    ULCAGenericInferenceRequest,
+    ULCAAsrInferenceRequest,
+    ULCATranslationInferenceRequest,
+    ULCATransliterationInferenceRequest,
+    ULCATtsInferenceRequest,
+    ULCANerInferenceRequest,
+]

@@ -1,13 +1,15 @@
-from typing import Optional
+from typing import List, Optional
 
 from pydantic import BaseModel
 
 from ..common import _ULCABaseAudioConfig, _ULCATaskType, _ULCAText
 
+
 class ULCAAsrInferenceResponseConfig(_ULCABaseAudioConfig):
-    postProcessors: Optional[list[str]]
+    postProcessors: List[str]
+
 
 class ULCAAsrInferenceResponse(BaseModel):
     taskType: _ULCATaskType = _ULCATaskType.ASR
-    output: list[_ULCAText]
-    config: Optional[ULCAAsrInferenceResponseConfig]
+    output: List[_ULCAText]
+    config: Optional[ULCAAsrInferenceResponseConfig] = None

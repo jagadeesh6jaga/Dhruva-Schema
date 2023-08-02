@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import List, Optional
 
 from pydantic import BaseModel
 
@@ -7,5 +7,5 @@ from ..common import _ULCATaskType, _ULCATextPair, _ULCATranslationInferenceConf
 
 class ULCATranslationInferenceResponse(BaseModel):
     taskType: _ULCATaskType = _ULCATaskType.TRANSLATION
-    output: list[_ULCATextPair]
-    config: Optional[_ULCATranslationInferenceConfig]
+    output: List[_ULCATextPair]
+    config: Optional[_ULCATranslationInferenceConfig] = None
