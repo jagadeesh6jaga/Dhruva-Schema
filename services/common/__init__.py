@@ -12,6 +12,7 @@ from .ulca_language import _ULCALanguage
 from .ulca_language_pair import _ULCALanguagePair
 from .ulca_task import _ULCATask, _ULCATaskType
 from .ulca_text import _ULCAText
+from .ulca_text_n_best import _ULCATextNBest
 from .ulca_text_pair import _ULCATextPair
 from .ulca_text_pair_multisuggestion import _ULCATextPairMultisuggestion
 from .ulca_translation_inference_config import _ULCATranslationInferenceConfig
