@@ -14,6 +14,7 @@ from .ulca_transliteration_inference_response import (
     ULCATransliterationInferenceResponse,
 )
 from .ulca_tts_inference_response import ULCATtsInferenceResponse
+from .ulca_vad_inference_response import ULCAVadInferenceResponse
 
 ULCAInferenceResponse = Union[
     ULCAGenericInferenceResponse,
@@ -22,4 +23,5 @@ ULCAInferenceResponse = Union[
     ULCATransliterationInferenceResponse,
     ULCATtsInferenceResponse,
     ULCANerInferenceResponse,
+    ULCAVadInferenceResponse,
 ]

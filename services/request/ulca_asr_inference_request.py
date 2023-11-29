@@ -24,6 +24,7 @@ class ULCATranscriptionFormat(BaseModel):
 class _ULCAAsrInferenceRequestConfig(
     _ULCABaseInferenceRequestConfig, _ULCABaseAudioConfig
 ):
+    preProcessors: Optional[List[str]]
     postProcessors: Optional[List[str]]
     transcriptionFormat: ULCATranscriptionFormat = ULCATranscriptionFormat()
     bestTokenCount: int = 0
