@@ -18,8 +18,7 @@ class _ULCAVadInferenceRequestConfig(_ULCABaseInferenceRequestConfig):
     speechPadMs: int
     minSpeechDurationMs: int = 100
     maxChunkDurationS: Optional[int] = None
-    preProcessAudio: bool = False
-
+    preProcessAudio: bool = True
 
 
 class ULCAVadInferenceRequest(_ULCABaseInferenceRequest):
