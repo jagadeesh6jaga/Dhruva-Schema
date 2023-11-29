@@ -10,6 +10,7 @@ class _ULCATaskType(str, Enum):
     TRANSLITERATION = "transliteration"
     NER = "ner"
     STS = "sts"  # TODO: Remove
+    VAD = "vad"
 
 
 # TODO: Depreciate soon
