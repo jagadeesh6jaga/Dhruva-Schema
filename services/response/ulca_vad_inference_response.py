@@ -5,8 +5,13 @@ from pydantic import BaseModel
 from ..common import _ULCATaskType
 
 
+class _ULCATimestamp(BaseModel):
+    start: float
+    end: float
+
+
 class _ULCATimestamps(BaseModel):
-    timestamps: List[Dict[str, float]]
+    timestamps: List[_ULCATimestamp]
 
 
 class ULCAVadInferenceResponse(BaseModel):
