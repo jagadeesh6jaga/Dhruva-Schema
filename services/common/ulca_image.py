@@ -5,6 +5,6 @@ from urllib.request import urlopen
 from pydantic import AnyHttpUrl, BaseModel, root_validator
 
 
-class _ULCAIamge(BaseModel):
+class _ULCAImage(BaseModel):
     imageContent: Optional[str] = None
     imageUri: Optional[AnyHttpUrl] = None

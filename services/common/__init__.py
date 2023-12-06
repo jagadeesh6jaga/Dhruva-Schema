@@ -5,7 +5,7 @@ from .dhruva_service import Service
 from .gender import Gender
 from .lang_to_script import LANG_CODE_TO_SCRIPT_CODE
 from .ulca_audio import _ULCAAudio
-from .ulca_image import _ULCAIamge
+from .ulca_image import _ULCAImage
 from .ulca_base_image_config import _ULCABaseImageConfig
 from .ulca_base_audio_config import _ULCABaseAudioConfig
 from .ulca_base_inference_request import _ULCABaseInferenceRequest

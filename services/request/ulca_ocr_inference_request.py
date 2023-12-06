@@ -4,7 +4,7 @@ from typing import List, Optional
 from pydantic import BaseModel
 
 from ..common import (
-    _ULCAIamge,
+    _ULCAImage,
     _ULCABaseInferenceRequest,
     _ULCABaseInferenceRequestConfig,
 )
@@ -17,6 +17,6 @@ class _ULCAOcrInferenceRequestConfig(
     pass
 
 
-class ULCAOcrnferenceRequest(_ULCABaseInferenceRequest):
-    image: List[_ULCAIamge]
+class ULCAOcrinferenceRequest(_ULCABaseInferenceRequest):
+    image: List[_ULCAImage]
     config: _ULCAOcrInferenceRequestConfig
