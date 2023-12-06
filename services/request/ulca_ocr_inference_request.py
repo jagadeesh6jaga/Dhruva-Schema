@@ -17,6 +17,6 @@ class _ULCAOcrInferenceRequestConfig(
     pass
 
 
-class ULCAOcrinferenceRequest(_ULCABaseInferenceRequest):
+class ULCAOcrInferenceRequest(_ULCABaseInferenceRequest):
     image: List[_ULCAImage]
     config: _ULCAOcrInferenceRequestConfig
